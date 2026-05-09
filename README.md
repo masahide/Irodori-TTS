@@ -44,13 +44,22 @@ Audio is represented as continuous latent sequences via the codec configured by 
 
 ## Installation
 
+### WSL/Linux ROCm / Windows CUDA / macOS
+
 ```bash
 git clone https://github.com/Aratako/Irodori-TTS.git
 cd Irodori-TTS
 uv sync
 ```
 
-**Note**: For Linux/Windows with CUDA, PyTorch is automatically installed from the cu128 index. For macOS (MPS) or CPU-only usage, `uv sync` will install the default PyTorch build.
+**Note**: For WSL/Linux with AMD ROCm, `uv sync` installs `torch` and
+`torchaudio` from the PyTorch ROCm 7.1 index
+(`https://download.pytorch.org/whl/rocm7.1`). For Windows with CUDA, PyTorch is
+installed from the cu128 index. For macOS (MPS) or CPU-only usage, `uv sync`
+will install the default PyTorch build.
+
+Use Python 3.10-3.12 for ROCm environments. Python 3.12 is recommended when
+following current ROCm-on-WSL setup guides.
 
 ## Quick Start
 

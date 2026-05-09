@@ -5,6 +5,7 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
+import irodori_tts.rocm_compat  # noqa: F401
 import gradio as gr
 from huggingface_hub import hf_hub_download
 
